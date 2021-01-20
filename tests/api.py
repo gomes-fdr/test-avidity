@@ -1,13 +1,20 @@
+import os
 from requests import get
 from hashlib import md5
+from dotenv import load_dotenv
 
-public_key = 'e04f3ae80a4e5d20d1177f0159f1b367'
-private_key = '37c97b78f13da604afee9b9bb4ae8922af8b2697'
+os.chdir('..')
+load_dotenv()
+PUBLIC_KEY = os.getenv('PUBLIC_KEY')
+PRIVATE_KEY = os.getenv('PRIVATE_KEY')
+
+print('chave publica: {}'.format(PUBLIC_KEY))
+
 ts = 1
-strHash = '{}{}{}'.format(ts, private_key, public_key)
+strHash = '{}{}{}'.format(ts, PRIVATE_KEY, PUBLIC_KEY)
 myHash = md5(strHash.encode('utf-8')).hexdigest()
 base_url = 'https://gateway.marvel.com/v1/public/comics'
-auth_params = '?ts={}&apikey={}&hash={}'.format(ts, public_key, myHash)
+auth_params = '?ts={}&apikey={}&hash={}'.format(ts, PUBLIC_KEY, myHash)
 
 print(base_url+auth_params)
 response = get(base_url+auth_params)
