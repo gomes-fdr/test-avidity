@@ -1,3 +1,4 @@
+"""A simple test of connection to marvel API."""
 import os
 from requests import get
 from hashlib import md5
