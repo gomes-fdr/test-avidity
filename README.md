@@ -7,7 +7,7 @@ Avidity test to consume Marvel API
   Marvel-story.
 
   Using the Marvel API [http://developer.marvel.com/docs], pick a random story
-  featuring your favourite character (perhaps The Hulk?). Generate an HTML page
+  featuring your favorite character (perhaps The Hulk?). Generate an HTML page
   with the following characteristics:
 
    * The story's description

@@ -1,6 +1,3 @@
-#!/usr/bin/env python
-#! -*- coding: utf-8 -*-
-
 import os
 import json
 import datetime
@@ -13,12 +10,13 @@ load_dotenv()
 PUBLIC_KEY  = os.getenv('PUBLIC_KEY')
 PRIVATE_KEY = os.getenv('PRIVATE_KEY')
 
-def getStory(id):
-    """Get one story from Marvel API."""
+def getCharacter(id):
+    """Get character by id from Marvel API."""
+
     ts = datetime.datetime.now().timestamp()
     strHash = '{}{}{}'.format(ts, PRIVATE_KEY, PUBLIC_KEY)
     myHash = md5(strHash.encode('utf-8')).hexdigest()
-    base_url = 'https://gateway.marvel.com/v1/public/comics/' + str(id)
+    base_url = 'https://gateway.marvel.com/v1/public/characters/' + str(id)
     auth_params = '?ts={}&apikey={}&hash={}'.format(ts, PUBLIC_KEY, myHash)
 
     try:

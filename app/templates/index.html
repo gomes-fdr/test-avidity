@@ -3,8 +3,42 @@
   <head>
     <meta charset="utf-8">
     <title>Avidity Teste::Marvel API</title>
+    <link rel="stylesheet" type="text/css" media="screen" href="{{ url_for('static', filename='normalize.css') }}" />
+    <link rel="stylesheet" type="text/css" media="screen" href="{{ url_for('static', filename='skeleton.css') }}" />
   </head>
   <body>
-    <h1>A story about Wolverine origins</h1>
+    <div class="container">
+      <div class="row">
+        <div class="one-third column">
+          <p><img src="{{story.data.results[0].thumbnail.path}}/portrait_xlarge.jpg" alt=""></p>
+        </div>
+        <div class="one-half column">
+          <h1>{{story.data.results[0].title}}</h1>
+        </div>
+      </div>
+      <p>Description: {{story.data.results[0].description}}</p>
+
+      <hr>
+      <h2>List of Characters</h2>
+      <table class="demo">
+        <thead>
+          <tr>
+            <th>Image</th>
+            <th>Name</th>
+            <th>Biography</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for character in characters %}
+          <tr>
+            <td><img src="{{character.data.results[0].thumbnail.path}}/portrait_medium.jpg" alt=""></td>
+            <td>{{character.data.results[0].name}}</td>
+            <td>{{character.data.results[0].description}}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+      <p>{{story.attributionText}}</p>
+    </div>
   </body>
 </html>
