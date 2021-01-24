@@ -1,5 +1,5 @@
-# test-avidity
-Avidity test to consume Marvel API
+# Test avidity
+To consume the Marvel API.
 
 ## The Comics Test
 
@@ -23,7 +23,28 @@ I use the follow stack:
 
 ## Instructions
 
-0. Make a clone from `git clone https://github.com/gomes-fdr/test-avidity.git`
-1. Replace the file `app/auth.py` by the file that I send you by email.
-2. Run `pip install -r requirements.txt` to install the dependencies.
-3. Run in the terminal `flask run`.
+0. Make a clone from:
+
+ `git clone https://github.com/gomes-fdr/test-avidity.git`
+
+1. Replace the file `app/auth.py` by the file that I email you.
+2. Create a virtual env inside the project folder to protect your
+ environment sanity:
+
+    `python -m venv .venv`
+
+3. Active that environment: `source .venv/bin/activate`
+4. Run `pip install -r requirements.txt` to install the dependencies.
+5. Run in the terminal `flask run`.
+
+After this steps you should see the message:
+
+```
+* Environment: production
+   WARNING: This is a development server. Do not use it in a production deployment.
+   Use a production WSGI server instead.
+ * Debug mode: off
+ * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+```
+
+Open a web browser and point to: `http://127.0.0.1:5000/`
