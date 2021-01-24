@@ -3,10 +3,10 @@ import json
 import datetime
 from requests import get, ConnectionError
 from hashlib import md5
-from dotenv import load_dotenv
+from app import auth
 
-os.chdir('..')
-load_dotenv()
+auth.setup()
+
 PUBLIC_KEY  = os.getenv('PUBLIC_KEY')
 PRIVATE_KEY = os.getenv('PRIVATE_KEY')
 
