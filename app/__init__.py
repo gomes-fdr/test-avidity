@@ -6,8 +6,9 @@ from .character import getCharacter
 app = Flask(__name__)
 
 COMICID = 46749
-WOLVERINE: 1009718
-SABRETOOTH: 1009554
+WOLVERINE = 1009718
+SABRETOOTH = 1009554
+
 
 @app.route('/')
 def index():
@@ -19,16 +20,15 @@ def index():
         return 'Connection Error', 500
 
     try:
-        wolverine = getCharacter(1009718)
+        wolverine = getCharacter(WOLVERINE)
         characters.append(wolverine)
     except:
         return 'Connection Error', 500
 
     try:
-        sabretooth = getCharacter(1009554)
+        sabretooth = getCharacter(SABRETOOTH)
         characters.append(sabretooth)
     except:
         return 'Connection Error', 500
-
 
     return render_template('index.html', story=story, characters=characters)
