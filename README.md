@@ -48,3 +48,6 @@ After this steps you should see the message:
 ```
 
 Open a web browser and point to: `http://127.0.0.1:5000/`
+
+## Note
+The story that I choose, unfortunately, didn't have the list of characters. Then I decide put the characters that I remember.
